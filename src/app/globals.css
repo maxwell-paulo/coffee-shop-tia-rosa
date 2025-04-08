@@ -3,6 +3,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --brown-50: #faf6f2;
+  --brown-100: #f0e9e0;
+  --brown-200: #e0d0c0;
+  --brown-300: #d2b9a0;
+  --brown-400: #c19c7a;
+  --brown-500: #a87c5a;
+  --brown-600: #8c6547;
+  --brown-700: #6f4e37;
+  --brown-800: #553c2a;
+  --brown-900: #422e20;
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
 }
 
 @theme inline {
@@ -16,11 +30,118 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --brown-50: #2a2421;
+    --brown-100: #342c28;
+    --brown-200: #3e352f;
+    --brown-300: #4b4038;
+    --brown-400: #5a4c42;
+    --brown-500: #6a594c;
+    --brown-600: #7b6858;
+    --brown-700: #8d7864;
+    --brown-800: #a08a74;
+    --brown-900: #b39c83;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Utilitários para as cores personalizadas */
+.bg-brown-50 {
+  background-color: var(--brown-50);
+}
+
+.bg-brown-100 {
+  background-color: var(--brown-100);
+}
+
+.bg-brown-200 {
+  background-color: var(--brown-200);
+}
+
+.bg-brown-300 {
+  background-color: var(--brown-300);
+}
+
+.bg-brown-400 {
+  background-color: var(--brown-400);
+}
+
+.bg-brown-500 {
+  background-color: var(--brown-500);
+}
+
+.bg-brown-600 {
+  background-color: var(--brown-600);
+}
+
+.bg-brown-700 {
+  background-color: var(--brown-700);
+}
+
+.bg-brown-800 {
+  background-color: var(--brown-800);
+}
+
+.bg-brown-900 {
+  background-color: var(--brown-900);
+}
+
+.text-brown-900 {
+  color: var(--brown-900);
+}
+
+.text-brown-800 {
+  color: var(--brown-800);
+}
+
+.text-brown-700 {
+  color: var(--brown-700);
+}
+
+.text-brown-600 {
+  color: var(--brown-600);
+}
+
+.border-brown-900 {
+  border-color: var(--brown-900);
+}
+
+.text-amber-300 {
+  color: var(--amber-300);
+}
+
+.bg-amber-300 {
+  background-color: var(--amber-300);
+}
+
+.bg-amber-400 {
+  background-color: var(--amber-400);
+}
+
+.bg-amber-500 {
+  background-color: var(--amber-500);
+}
+
+.bg-amber-600 {
+  background-color: var(--amber-600);
+}
+
+.hover\:bg-amber-400:hover {
+  background-color: var(--amber-400);
+}
+
+.hover\:bg-amber-600:hover {
+  background-color: var(--amber-600);
+}
+
+.hover\:bg-brown-700:hover {
+  background-color: var(--brown-700);
+}
+
+.hover\:bg-brown-800:hover {
+  background-color: var(--brown-800);
 }
