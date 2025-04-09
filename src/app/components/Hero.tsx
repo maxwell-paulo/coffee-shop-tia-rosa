@@ -17,7 +17,7 @@ export default function Hero() {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/cardapio"
-                                className="px-6 py-3 rounded-full bg-amber-500 text-brown-900 font-medium hover:bg-amber-400 transition-colors">
+                                className="px-6 py-3 rounded-full bg-amber-500 text-white font-medium hover:bg-amber-400 transition-colors">
                                 Ver Nosso Cardápio
                             </Link>
                             <Link href="/contato"
@@ -32,7 +32,7 @@ export default function Hero() {
             {/* Faixa de destaque abaixo do hero */}
             <div className="bg-amber-500 py-4">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-brown-900">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-white">
                         <div className="flex flex-col items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mb-2">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />

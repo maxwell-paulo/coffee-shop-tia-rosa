@@ -54,9 +54,9 @@ export default function FeaturedProducts() {
                             <div className="p-6">
                                 <h3 className="font-bold text-brown-900 text-lg mb-2">{product.name}</h3>
                                 <p className="text-gray-600 text-sm mb-4">{product.description}</p>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-brown-800 font-bold">{product.price}</span>
-                                    <button className="px-4 py-2 bg-amber-500 text-white rounded-full text-sm hover:bg-amber-600 transition-colors">
+                                <div className="flex items-center justify-between">
+                                    <span className="font-bold text-xl">{product.price}</span>
+                                    <button className="px-4 py-1 bg-amber-500 text-white rounded-full hover:bg-amber-400 transition-colors">
                                         Adicionar
                                     </button>
                                 </div>
