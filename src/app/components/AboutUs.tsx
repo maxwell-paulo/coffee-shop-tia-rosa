@@ -1,4 +1,6 @@
 import Link from 'next/link';
+// Importando ícones do react-icons
+import { HiCheckCircle } from 'react-icons/hi2';
 
 export default function AboutUs() {
     return (
@@ -24,27 +26,19 @@ export default function AboutUs() {
                         </p>
                         <div className="grid grid-cols-2 gap-4 mb-8">
                             <div className="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-amber-500 mr-2">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
                                 <span className="text-gray-700">Grãos Selecionados</span>
                             </div>
                             <div className="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-amber-500 mr-2">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
                                 <span className="text-gray-700">Receitas Exclusivas</span>
                             </div>
                             <div className="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-amber-500 mr-2">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
                                 <span className="text-gray-700">Ambiente Familiar</span>
                             </div>
                             <div className="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-amber-500 mr-2">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
                                 <span className="text-gray-700">Wi-Fi Gratuito</span>
                             </div>
                         </div>
