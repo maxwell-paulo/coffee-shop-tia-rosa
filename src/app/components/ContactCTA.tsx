@@ -1,10 +1,24 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+// Importing logo
+import logo from '../../assets/images/logos/logo.png';
 
 export default function ContactCTA() {
     return (
         <section className="py-20 bg-amber-500 relative">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
+                    <div className="flex justify-center mb-6">
+                        <div className="relative w-16 h-16 bg-white rounded-full p-2">
+                            <Image
+                                src={logo}
+                                alt="Coffee Shops Tia Rosa"
+                                fill
+                                className="object-contain p-1"
+                            />
+                        </div>
+                    </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Venha Experimentar o Melhor Café da Região
                     </h2>

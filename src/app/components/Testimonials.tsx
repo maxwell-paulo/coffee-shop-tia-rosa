@@ -1,5 +1,9 @@
 // Importando o ícone de estrela do react-icons
 import { FaStar } from 'react-icons/fa';
+import Image from 'next/image';
+
+// Importing logo
+import logo from '../../assets/images/logos/logo.png';
 
 export default function Testimonials() {
     const testimonials = [
@@ -30,6 +34,16 @@ export default function Testimonials() {
         <section className="py-16 bg-brown-50">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
+                    <div className="flex justify-center mb-4">
+                        <div className="relative w-12 h-12 bg-amber-100 rounded-full p-2">
+                            <Image
+                                src={logo}
+                                alt="Coffee Shops Tia Rosa"
+                                fill
+                                className="object-contain p-1"
+                            />
+                        </div>
+                    </div>
                     <h2 className="text-3xl font-bold text-brown-900 mb-4">O Que Nossos Clientes Dizem</h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         A opinião de quem já experimentou nossa experiência é o que nos motiva a melhorar cada dia mais.

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 // Importando ícones do react-icons
 import { HiOutlineClock, HiOutlineWifi, HiOutlineFaceSmile } from 'react-icons/hi2';
 

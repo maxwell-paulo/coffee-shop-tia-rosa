@@ -1,4 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+// Importing logo
+import logoWithText from '../../assets/images/logos/logo-texto.png';
+
 // Importando ícones do react-icons
 import { HiCheckCircle } from 'react-icons/hi2';
 
@@ -11,6 +16,16 @@ export default function AboutUs() {
                     <div className="bg-gray-200 h-[400px] rounded-lg relative">
                         <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                             <span>Imagem do Café</span>
+                        </div>
+                        <div className="absolute top-4 left-4 bg-white p-3 rounded-lg shadow-md">
+                            <div className="relative w-32 h-10">
+                                <Image
+                                    src={logoWithText}
+                                    alt="Coffee Shops Tia Rosa"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         </div>
                     </div>
 

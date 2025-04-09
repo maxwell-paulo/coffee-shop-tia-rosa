@@ -2,7 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTheme } from './ThemeProvider';
+
+// Importing logos
+import logoImage from '../../assets/images/logos/logo.png';
+import logoText from '../../assets/images/logos/texto.png';
 
 // Importando ícones do react-icons
 import { HiSun, HiMoon } from 'react-icons/hi';
@@ -15,8 +20,25 @@ export default function Navbar() {
     return (
         <nav className="bg-brown-900 text-white py-4 px-6 shadow-md sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
-                <Link href="/" className="flex items-center space-x-2">
-                    <div className="font-bold text-xl md:text-2xl">Coffee Shops Tia Rosa</div>
+                <Link href="/" className="flex items-center space-x-3">
+                    <div className="relative w-12 h-12">
+                        <Image
+                            src={logoImage}
+                            alt="Logo Coffee Shops Tia Rosa"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
+                    <div className="relative w-48 h-12">
+                        <Image
+                            src={logoText}
+                            alt="Coffee Shops Tia Rosa"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
                 </Link>
 
                 {/* Menu para desktop */}
