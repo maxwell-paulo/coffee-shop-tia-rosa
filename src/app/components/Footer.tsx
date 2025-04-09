@@ -1,6 +1,15 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
+    const [currentYear, setCurrentYear] = useState('');
+
+    useEffect(() => {
+        setCurrentYear(new Date().getFullYear().toString());
+    }, []);
+
     return (
         <footer className="bg-brown-900 text-white py-10">
             <div className="container mx-auto px-6">
@@ -46,7 +55,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-75">
-                    <p>&copy; {new Date().getFullYear()} Coffee Shops Tia Rosa. Todos os direitos reservados.</p>
+                    <p>&copy; {currentYear || '2023'} Coffee Shops Tia Rosa. Todos os direitos reservados.</p>
                     <div className="mt-2">
                         <Link href="/politica-privacidade" className="hover:text-amber-300 transition-colors">
                             Política de Privacidade
