@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  /* Cores base para modo claro */
   --background: #ffffff;
   --foreground: #171717;
   --brown-50: #faf6f2;
@@ -17,6 +18,17 @@
   --amber-400: #fbbf24;
   --amber-500: #f59e0b;
   --amber-600: #d97706;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+
+  /* Cores de borda/sombra */
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* Cores de texto */
+  --text-primary: var(--foreground);
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
 }
 
 @theme inline {
@@ -26,21 +38,45 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --brown-50: #2a2421;
-    --brown-100: #342c28;
-    --brown-200: #3e352f;
-    --brown-300: #4b4038;
-    --brown-400: #5a4c42;
-    --brown-500: #6a594c;
-    --brown-600: #7b6858;
-    --brown-700: #8d7864;
-    --brown-800: #a08a74;
-    --brown-900: #b39c83;
-  }
+.dark {
+  /* Cores base para modo escuro */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* Tons de marrom mais escuros para o tema dark */
+  --brown-50: #1c1917;
+  /* Escurecido para background de seções */
+  --brown-100: #292524;
+  --brown-200: #372f2c;
+  --brown-300: #443a35;
+  --brown-400: #57483f;
+  --brown-500: #6e5b4f;
+  --brown-600: #86705f;
+  --brown-700: #9d8574;
+  --brown-800: #b49b89;
+  --brown-900: #cbb3a1;
+
+  /* Cores de destaque - mantendo vibrantes para contraste */
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+
+  /* Cores de borda/sombra para o modo escuro */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
+  /* Cores de texto para o modo escuro */
+  --text-primary: var(--foreground);
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+}
+
+/* Comportamento de transição suave ao mudar de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
@@ -130,6 +166,14 @@ body {
   background-color: var(--amber-600);
 }
 
+.bg-rose-500 {
+  background-color: var(--rose-500);
+}
+
+.bg-rose-600 {
+  background-color: var(--rose-600);
+}
+
 .hover\:bg-amber-400:hover {
   background-color: var(--amber-400);
 }
@@ -138,10 +182,114 @@ body {
   background-color: var(--amber-600);
 }
 
+.hover\:bg-rose-600:hover {
+  background-color: var(--rose-600);
+}
+
 .hover\:bg-brown-700:hover {
   background-color: var(--brown-700);
 }
 
 .hover\:bg-brown-800:hover {
   background-color: var(--brown-800);
+}
+
+/* Adicionando classes específicas para ajustar elementos no modo escuro */
+.dark .bg-white {
+  background-color: var(--brown-50);
+}
+
+.dark .text-gray-600 {
+  color: var(--text-secondary);
+}
+
+.dark .text-gray-400 {
+  color: var(--text-tertiary);
+}
+
+.dark .border-gray-100 {
+  border-color: var(--border-color);
+}
+
+.dark .shadow-md,
+.dark .shadow-lg {
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Ajustes específicos para seções no modo escuro */
+.dark .bg-brown-50 {
+  background-color: var(--brown-100);
+}
+
+.dark .bg-amber-500 {
+  background-color: #a2650a;
+  /* Versão mais escura do âmbar para o dark mode */
+}
+
+.dark .bg-white {
+  background-color: var(--brown-50);
+}
+
+/* Adaptações para placeholders e elementos visuais */
+.dark .bg-gray-200 {
+  background-color: var(--brown-300);
+}
+
+/* Ajustes para faixas coloridas no Hero */
+.dark .bg-brown-800 {
+  background-color: #1a1613;
+  /* Ainda mais escuro para o header */
+}
+
+.dark .bg-amber-100 {
+  background-color: var(--brown-300);
+}
+
+/* Ajustes para cards e elementos no modo escuro */
+.dark .rounded-lg.shadow-md {
+  border: 1px solid var(--border-color);
+}
+
+/* Ajustes para textos com melhor legibilidade */
+.dark .text-brown-900 {
+  color: var(--brown-800);
+  /* Tom mais claro para melhor legibilidade */
+}
+
+.dark .text-brown-800 {
+  color: var(--brown-700);
+  /* Tom mais claro para melhor legibilidade */
+}
+
+/* Ajustes para o estado ativo e hover dos botões no modo escuro */
+.dark .hover\:bg-amber-400:hover {
+  background-color: #b17815;
+  /* Tom mais rico para o hover no dark mode */
+}
+
+.dark .hover\:bg-amber-600:hover {
+  background-color: #b35900;
+  /* Tom mais rico para o hover no dark mode */
+}
+
+/* Ajustes para a navegação e sticky header no dark mode */
+.dark .sticky.bg-white {
+  background-color: #1c1917;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Melhorar o contraste dos ícones no modo escuro */
+.dark .text-amber-500 {
+  color: #f59e0b;
+  /* Mantendo vibrante para ícones e destaques */
+}
+
+/* Escondendo scrollbar para categorias no cardápio */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
