@@ -2,8 +2,11 @@
 import { FaStar } from 'react-icons/fa';
 import Image from 'next/image';
 
-// Importing logo
+// Importing logo and avatars
 import logo from '../../assets/images/logos/logo.png';
+import avatar1 from '../../assets/images/testimonials/avatar-1.png';
+import avatar2 from '../../assets/images/testimonials/avatar-2.png';
+import avatar3 from '../../assets/images/testimonials/avatar-3.png';
 
 export default function Testimonials() {
     const testimonials = [
@@ -12,21 +15,21 @@ export default function Testimonials() {
             name: 'Ana Paula',
             role: 'Cliente Frequente',
             content: 'O café da Tia Rosa é simplesmente o melhor da cidade! O ambiente é acolhedor e o atendimento é sempre excelente. Meu lugar favorito para trabalhar remotamente.',
-            avatar: '/images/avatar-1.jpg', // Espaço para imagem
+            avatar: avatar1,
         },
         {
             id: 2,
             name: 'Ricardo Oliveira',
             role: 'Empresário Local',
             content: 'Sempre trago meus clientes aqui para reuniões. O café é excepcional e os bolos são divinos. Um verdadeiro tesouro em nossa cidade!',
-            avatar: '/images/avatar-2.jpg', // Espaço para imagem
+            avatar: avatar2,
         },
         {
             id: 3,
             name: 'Mariana Silva',
             role: 'Estudante',
             content: 'Descobri o Coffee Shops Tia Rosa durante a faculdade e virou meu refúgio para estudar. Wi-Fi rápido, cafezinho delicioso e preços justos!',
-            avatar: '/images/avatar-3.jpg', // Espaço para imagem
+            avatar: avatar3,
         },
     ];
 
@@ -54,9 +57,13 @@ export default function Testimonials() {
                     {testimonials.map((testimonial) => (
                         <div key={testimonial.id} className="bg-white p-6 rounded-lg shadow-md">
                             <div className="flex items-center mb-4">
-                                <div className="w-12 h-12 bg-gray-200 rounded-full mr-4 overflow-hidden">
-                                    {/* Placeholder para avatar */}
-                                    <div className="w-full h-full flex items-center justify-center text-gray-400 text-xs">Avatar</div>
+                                <div className="w-12 h-12 rounded-full mr-4 overflow-hidden relative">
+                                    <Image
+                                        src={testimonial.avatar}
+                                        alt={`Avatar de ${testimonial.name}`}
+                                        fill
+                                        className="object-cover"
+                                    />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-brown-900">{testimonial.name}</h3>
