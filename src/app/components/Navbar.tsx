@@ -30,7 +30,7 @@ export default function Navbar() {
                             priority
                         />
                     </div>
-                    <div className="relative w-48 h-12">
+                    <div className="relative w-48 h-12 hidden sm:block">
                         <Image
                             src={logoText}
                             alt="Coffee Shops Tia Rosa"
