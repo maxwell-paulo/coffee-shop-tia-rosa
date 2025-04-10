@@ -1,32 +1,27 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Importing logo
-import logoWithText from '../../assets/images/logos/logo-texto.png';
+import aboutUsImage from '../../assets/images/about-us.png';
 
-// Importando ícones do react-icons
-import { HiCheckCircle } from 'react-icons/hi2';
+import { PiCoffeeBeanFill } from "react-icons/pi";
+import { MdPeople } from "react-icons/md";
+import { RiFileListLine } from "react-icons/ri";
+import { FaWifi } from "react-icons/fa";
+
 
 export default function AboutUs() {
     return (
         <section className="py-16 bg-white">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    {/* Espaço para imagem do Coffee Shop */}
-                    <div className="bg-gray-200 h-[400px] rounded-lg relative">
-                        <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                            <span>Imagem do Café</span>
-                        </div>
-                        <div className="absolute top-4 left-4 bg-white p-3 rounded-lg shadow-md">
-                            <div className="relative w-32 h-10">
-                                <Image
-                                    src={logoWithText}
-                                    alt="Coffee Shops Tia Rosa"
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                        </div>
+                    {/* Image of the Coffee Shop */}
+                    <div className="rounded-lg relative h-[400px] overflow-hidden">
+                        <Image
+                            src={aboutUsImage}
+                            alt="Sobre o Coffee Shops Tia Rosa"
+                            fill
+                            className="object-cover rounded-lg"
+                        />
                     </div>
 
                     <div>
@@ -41,20 +36,20 @@ export default function AboutUs() {
                         </p>
                         <div className="grid grid-cols-2 gap-4 mb-8">
                             <div className="flex items-center">
-                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
-                                <span className="text-gray-700">Grãos Selecionados</span>
+                                <PiCoffeeBeanFill className="w-5 h-5 text-amber-500 mr-2" />
+                                <span className="text-gray-700 feature-text">Grãos Selecionados</span>
                             </div>
                             <div className="flex items-center">
-                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
-                                <span className="text-gray-700">Receitas Exclusivas</span>
+                                <RiFileListLine className="w-5 h-5 text-amber-500 mr-2" />
+                                <span className="text-gray-700 feature-text">Receitas Exclusivas</span>
                             </div>
                             <div className="flex items-center">
-                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
-                                <span className="text-gray-700">Ambiente Familiar</span>
+                                <MdPeople className="w-5 h-5 text-amber-500 mr-2" />
+                                <span className="text-gray-700 feature-text">Ambiente Familiar</span>
                             </div>
                             <div className="flex items-center">
-                                <HiCheckCircle className="w-5 h-5 text-amber-500 mr-2" />
-                                <span className="text-gray-700">Wi-Fi Gratuito</span>
+                                <FaWifi className="w-5 h-5 text-amber-500 mr-2" />
+                                <span className="text-gray-700 feature-text">Wi-Fi Gratuito</span>
                             </div>
                         </div>
                         <Link href="/sobre"

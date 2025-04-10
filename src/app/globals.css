@@ -284,6 +284,11 @@ body {
   /* Mantendo vibrante para ícones e destaques */
 }
 
+/* Custom class for feature text in dark mode */
+.dark .feature-text {
+  color: var(--amber-500) !important;
+}
+
 /* Escondendo scrollbar para categorias no cardápio */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
