@@ -1,4 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+// Importing the hero image
+import heroImage from '../../assets/images/section-hero.png';
 
 // Importando ícones do react-icons
 import { HiOutlineClock, HiOutlineWifi, HiOutlineFaceSmile } from 'react-icons/hi2';
@@ -6,27 +10,41 @@ import { HiOutlineClock, HiOutlineWifi, HiOutlineFaceSmile } from 'react-icons/h
 export default function Hero() {
     return (
         <div className="relative bg-brown-800 overflow-hidden">
-            {/* Espaço para imagem de fundo de café */}
+            {/* Hero section with text on the left and image on the right */}
             <div className="relative h-[500px] flex items-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-brown-900/90 to-brown-900/30"></div>
 
                 <div className="container mx-auto px-6 relative z-10">
-                    <div className="max-w-2xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                            Café Especial com <span className="text-amber-300">Toque Caseiro</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/80 mb-8">
-                            Venha descobrir o melhor café da região com o aconchego único que só o Coffee Shops Tia Rosa oferece.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Link href="/cardapio"
-                                className="px-6 py-3 rounded-full bg-amber-500 text-white font-medium hover:bg-amber-400 transition-colors">
-                                Ver Nosso Cardápio
-                            </Link>
-                            <Link href="/contato"
-                                className="px-6 py-3 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white/10 transition-colors">
-                                Entre em Contato
-                            </Link>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        {/* Text content - takes full width on mobile, half on larger screens */}
+                        <div>
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+                                Café Especial com <span className="text-amber-300">Toque Caseiro</span>
+                            </h1>
+                            <p className="text-lg md:text-xl text-white/80 mb-8">
+                                Venha descobrir o melhor café da região com o aconchego único que só o Coffee Shops Tia Rosa oferece.
+                            </p>
+                            <div className="flex flex-wrap gap-4">
+                                <Link href="/cardapio"
+                                    className="px-6 py-3 rounded-full bg-amber-500 text-white font-medium hover:bg-amber-400 transition-colors">
+                                    Ver Nosso Cardápio
+                                </Link>
+                                <Link href="/contato"
+                                    className="px-6 py-3 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white/10 transition-colors">
+                                    Entre em Contato
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Hero Image - visible on medium screens and up */}
+                        <div className="hidden md:block relative h-[400px]">
+                            <Image
+                                src={heroImage}
+                                alt="Coffee Shop Tia Rosa"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </div>
                     </div>
                 </div>
