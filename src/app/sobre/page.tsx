@@ -2,11 +2,48 @@
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Image from 'next/image';
+import TeamMember from '../components/TeamMember';
 import { FaFireAlt } from 'react-icons/fa';
 import { MdVerified } from 'react-icons/md';
 import { BsPeopleFill } from 'react-icons/bs';
 
+// Importando imagens
+import aboutUsPageImage from '../../assets/images/about-us-page.png';
+import team1Image from '../../assets/images/team/team-1.png';
+import team2Image from '../../assets/images/team/team-2.png';
+import team3Image from '../../assets/images/team/team-3.png';
+import team4Image from '../../assets/images/team/team-4.png';
+
 export default function Sobre() {
+    // Dados dos membros da equipe
+    const teamMembers = [
+        {
+            id: 1,
+            name: 'Maria Rosa',
+            role: 'Fundadora & Barista Chefe',
+            image: team1Image
+        },
+        {
+            id: 2,
+            name: 'João Silva',
+            role: 'Gerente',
+            image: team2Image
+        },
+        {
+            id: 3,
+            name: 'Ana Oliveira',
+            role: 'Confeiteira',
+            image: team3Image
+        },
+        {
+            id: 4,
+            name: 'Carlos Santos',
+            role: 'Barista',
+            image: team4Image
+        }
+    ];
+
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar />
@@ -38,11 +75,15 @@ export default function Sobre() {
                                 </p>
                             </div>
 
-                            {/* Espaço para imagem da história/fundadora */}
-                            <div className="bg-gray-200 h-[400px] rounded-lg relative">
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                    <span>Imagem da Nossa História</span>
-                                </div>
+                            {/* Imagem da Nossa História */}
+                            <div className="rounded-lg relative h-[500px] overflow-hidden bg-brown-100/20">
+                                <Image
+                                    src={aboutUsPageImage}
+                                    alt="História do Coffee Shops Tia Rosa"
+                                    fill
+                                    className="object-contain object-center"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>
@@ -93,53 +134,14 @@ export default function Sobre() {
                         <h2 className="text-3xl font-bold text-brown-900 mb-12 text-center">Conheça Nossa Equipe</h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {/* Membro da equipe 1 */}
-                            <div className="text-center">
-                                <div className="w-40 h-40 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
-                                    {/* Espaço para foto do membro */}
-                                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                                        <span>Foto</span>
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold text-brown-900">Maria Rosa</h3>
-                                <p className="text-gray-600">Fundadora & Barista Chefe</p>
-                            </div>
-
-                            {/* Membro da equipe 2 */}
-                            <div className="text-center">
-                                <div className="w-40 h-40 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
-                                    {/* Espaço para foto do membro */}
-                                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                                        <span>Foto</span>
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold text-brown-900">João Silva</h3>
-                                <p className="text-gray-600">Gerente</p>
-                            </div>
-
-                            {/* Membro da equipe 3 */}
-                            <div className="text-center">
-                                <div className="w-40 h-40 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
-                                    {/* Espaço para foto do membro */}
-                                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                                        <span>Foto</span>
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold text-brown-900">Ana Oliveira</h3>
-                                <p className="text-gray-600">Confeiteira</p>
-                            </div>
-
-                            {/* Membro da equipe 4 */}
-                            <div className="text-center">
-                                <div className="w-40 h-40 mx-auto bg-gray-200 rounded-full mb-4 overflow-hidden">
-                                    {/* Espaço para foto do membro */}
-                                    <div className="w-full h-full flex items-center justify-center text-gray-400">
-                                        <span>Foto</span>
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold text-brown-900">Carlos Santos</h3>
-                                <p className="text-gray-600">Barista</p>
-                            </div>
+                            {teamMembers.map((member) => (
+                                <TeamMember
+                                    key={member.id}
+                                    name={member.name}
+                                    role={member.role}
+                                    image={member.image}
+                                />
+                            ))}
                         </div>
                     </div>
                 </section>
