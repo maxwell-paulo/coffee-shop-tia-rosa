@@ -82,6 +82,15 @@ export default function Footer() {
                             Termos de Uso
                         </Link>
                     </div>
+                    <div className="mt-4 p-3 bg-brown-800/50 rounded-md">
+                        <p className="text-amber-200 font-medium mb-1">Aviso: Trabalho Acadêmico</p>
+                        <p className="text-xs">
+                            Este website foi desenvolvido exclusivamente para fins acadêmicos. Todas as informações,
+                            imagens e conteúdos apresentados são fictícios e não possuem valor comercial.
+                            Não é permitida a reprodução ou utilização deste material para fins comerciais
+                            ou de marketing sem autorização prévia.
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>
