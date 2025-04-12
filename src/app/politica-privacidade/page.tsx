@@ -6,7 +6,6 @@ export default function PoliticaPrivacidade() {
         <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
-                {/* Hero da página */}
                 <div className="bg-brown-800 text-white py-16">
                     <div className="container mx-auto px-6">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Política de Privacidade</h1>
@@ -16,7 +15,6 @@ export default function PoliticaPrivacidade() {
                     </div>
                 </div>
 
-                {/* Conteúdo da página */}
                 <section className="py-16">
                     <div className="container mx-auto px-6">
                         <div className="max-w-4xl mx-auto">

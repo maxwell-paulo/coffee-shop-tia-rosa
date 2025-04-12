@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Importing logo
 import logo from '../../assets/images/logos/logo.png';
 
 export default function ContactCTA() {
@@ -39,7 +38,6 @@ export default function ContactCTA() {
                 </div>
             </div>
 
-            {/* Elementos decorativos de fundo */}
             <div className="absolute top-0 left-0 w-24 h-24 bg-amber-300 rounded-full opacity-40 transform translate-x-12 translate-y-8"></div>
             <div className="absolute bottom-0 right-0 w-40 h-40 bg-amber-300 rounded-full opacity-40 transform -translate-x-12 -translate-y-12"></div>
         </section>

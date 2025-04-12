@@ -6,7 +6,6 @@ interface GoogleMapProps {
 }
 
 export default function GoogleMap({ title, subtitle }: GoogleMapProps) {
-    // Coordenadas para um ponto aleatório no Oceano Atlântico
     const latitude = -25.363;
     const longitude = -131.044;
 

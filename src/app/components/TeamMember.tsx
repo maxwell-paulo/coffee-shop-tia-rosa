@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 interface TeamMemberProps {
     name: string;
     role: string;
-    image?: StaticImageData | string; // Aceita tanto StaticImageData quanto string
+    image?: StaticImageData | string;
 }
 
 export default function TeamMember({ name, role, image }: TeamMemberProps) {

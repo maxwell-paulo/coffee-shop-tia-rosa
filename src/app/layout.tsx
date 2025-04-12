@@ -36,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        {/* Script para evitar flickering quando o tema for carregado */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -1,8 +1,6 @@
-// Importando o ícone de estrela do react-icons
 import { FaStar } from 'react-icons/fa';
 import Image from 'next/image';
 
-// Importing logo and avatars
 import logo from '../../assets/images/logos/logo.png';
 import avatar1 from '../../assets/images/testimonials/avatar-1.png';
 import avatar2 from '../../assets/images/testimonials/avatar-2.png';

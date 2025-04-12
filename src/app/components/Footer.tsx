@@ -3,10 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// Importando ícones do react-icons
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
-// Importing logos
 import logoImage from '../../assets/images/logos/logo.png';
 import logoText from '../../assets/images/logos/texto.png';
 
@@ -44,7 +42,6 @@ export default function Footer() {
                             Oferecendo o melhor café e experiência desde 2010. Venha nos visitar e descobrir porque somos o café preferido da região.
                         </p>
                         <div className="flex space-x-4">
-                            {/* Ícones de redes sociais utilizando react-icons */}
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-300 transition-colors">
                                 <FaFacebook className="w-5 h-5" />
                             </a>

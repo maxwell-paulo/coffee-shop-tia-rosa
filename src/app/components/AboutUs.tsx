@@ -14,7 +14,6 @@ export default function AboutUs() {
         <section className="py-16 bg-white">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    {/* Image of the Coffee Shop */}
                     <div className="rounded-lg relative h-[400px] overflow-hidden">
                         <Image
                             src={aboutUsImage}

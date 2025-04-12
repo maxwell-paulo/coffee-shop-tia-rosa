@@ -30,8 +30,6 @@ export default function Contato() {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setEnviando(true);
-
-        // Simulando envio do formulário
         setTimeout(() => {
             setEnviando(false);
             setEnviado(true);
@@ -42,8 +40,6 @@ export default function Contato() {
                 mensagem: '',
                 assunto: 'Informações',
             });
-
-            // Resetar mensagem após 5 segundos
             setTimeout(() => {
                 setEnviado(false);
             }, 5000);
@@ -54,7 +50,6 @@ export default function Contato() {
         <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
-                {/* Hero da página */}
                 <div className="bg-brown-800 text-white py-16">
                     <div className="container mx-auto px-6">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Entre em Contato</h1>
@@ -64,11 +59,9 @@ export default function Contato() {
                     </div>
                 </div>
 
-                {/* Seção principal de contato */}
                 <section className="py-16">
                     <div className="container mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                            {/* Formulário de contato */}
                             <div>
                                 <h2 className="text-3xl font-bold text-brown-900 mb-6">Envie-nos uma mensagem</h2>
                                 <p className="text-gray-600 mb-8">
@@ -160,7 +153,6 @@ export default function Contato() {
                                 </form>
                             </div>
 
-                            {/* Informações de contato */}
                             <div>
                                 <h2 className="text-3xl font-bold text-brown-900 mb-6">Informações de contato</h2>
                                 <p className="text-gray-600 mb-8">
@@ -234,13 +226,11 @@ export default function Contato() {
                     </div>
                 </section>
 
-                {/* Mapa */}
                 <GoogleMap
                     title="Nossa Localização"
                     subtitle="Estamos localizados em uma região central, de fácil acesso e com estacionamento próximo."
                 />
 
-                {/* Informações adicionais */}
                 <section className="py-16 bg-white">
                     <div className="container mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

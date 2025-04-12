@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import ProductCard from './ProductCard';
 
-// Importando imagens
 import cafeEspecial from '../../assets/images/products/cafes/cafe-especial.png';
 import boloChocolate from '../../assets/images/products/doces/bolo-de-choclate-caseiro.png';
 import cafeComLeite from '../../assets/images/products/cafes/cafe-com-leite-premium.png';

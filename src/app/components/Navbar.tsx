@@ -5,11 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from './ThemeProvider';
 
-// Importing logos
 import logoImage from '../../assets/images/logos/logo.png';
 import logoText from '../../assets/images/logos/texto.png';
 
-// Importando ícones do react-icons
 import { HiSun, HiMoon } from 'react-icons/hi';
 import { HiMiniXMark, HiBars3 } from 'react-icons/hi2';
 
@@ -41,7 +39,6 @@ export default function Navbar() {
                     </div>
                 </Link>
 
-                {/* Menu para desktop */}
                 <div className="hidden md:flex space-x-8">
                     <Link href="/" className="hover:text-amber-300 transition-colors">
                         Início
@@ -56,7 +53,6 @@ export default function Navbar() {
                         Contato
                     </Link>
 
-                    {/* Seletor de tema - apenas ícone */}
                     <button
                         onClick={toggleTheme}
                         className="hover:text-amber-300 transition-colors"
@@ -70,9 +66,7 @@ export default function Navbar() {
                     </button>
                 </div>
 
-                {/* Botão do menu mobile */}
                 <div className="md:hidden flex items-center">
-                    {/* Seletor de tema para mobile - apenas ícone */}
                     <button
                         onClick={toggleTheme}
                         className="mr-4 hover:text-amber-300 transition-colors"
@@ -98,7 +92,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Menu mobile */}
             {isMenuOpen && (
                 <div className="md:hidden pt-4 pb-2 px-6 bg-brown-800 absolute left-0 right-0 shadow-lg">
                     <div className="flex flex-col space-y-4">

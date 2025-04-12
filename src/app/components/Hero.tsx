@@ -1,22 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Importing the hero image
 import heroImage from '../../assets/images/section-hero.png';
 
-// Importando ícones do react-icons
 import { HiOutlineClock, HiOutlineWifi, HiOutlineFaceSmile } from 'react-icons/hi2';
 
 export default function Hero() {
     return (
         <div className="relative bg-brown-800 overflow-hidden">
-            {/* Hero section with text on the left and image on the right */}
             <div className="relative h-[500px] flex items-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-brown-900/90 to-brown-900/30"></div>
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        {/* Text content - takes full width on mobile, half on larger screens */}
                         <div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
                                 Café Especial com <span className="text-amber-300">Toque Caseiro</span>
@@ -36,7 +32,6 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Hero Image - visible on medium screens and up */}
                         <div className="hidden md:block relative h-[400px]">
                             <Image
                                 src={heroImage}
@@ -50,7 +45,6 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Faixa de destaque abaixo do hero */}
             <div className="bg-amber-500 py-4">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-white">

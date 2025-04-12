@@ -8,7 +8,6 @@ import { FaFireAlt } from 'react-icons/fa';
 import { MdVerified } from 'react-icons/md';
 import { BsPeopleFill } from 'react-icons/bs';
 
-// Importando imagens
 import aboutUsPageImage from '../../assets/images/about-us-page.png';
 import team1Image from '../../assets/images/team/team-1.png';
 import team2Image from '../../assets/images/team/team-2.png';
@@ -16,7 +15,6 @@ import team3Image from '../../assets/images/team/team-3.png';
 import team4Image from '../../assets/images/team/team-4.png';
 
 export default function Sobre() {
-    // Dados dos membros da equipe
     const teamMembers = [
         {
             id: 1,
@@ -48,7 +46,6 @@ export default function Sobre() {
         <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
-                {/* Hero da página */}
                 <div className="bg-brown-800 text-white py-16">
                     <div className="container mx-auto px-6">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Sobre o Coffee Shops Tia Rosa</h1>
@@ -58,7 +55,6 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                {/* Nossa História */}
                 <section className="py-16">
                     <div className="container mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -75,7 +71,6 @@ export default function Sobre() {
                                 </p>
                             </div>
 
-                            {/* Imagem da Nossa História */}
                             <div className="rounded-lg relative h-[500px] overflow-hidden bg-brown-100/20">
                                 <Image
                                     src={aboutUsPageImage}
@@ -89,7 +84,6 @@ export default function Sobre() {
                     </div>
                 </section>
 
-                {/* Nossos Valores */}
                 <section className="py-16 bg-brown-50">
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl font-bold text-brown-900 mb-12 text-center">Nossos Valores</h2>
@@ -128,7 +122,6 @@ export default function Sobre() {
                     </div>
                 </section>
 
-                {/* Nossa Equipe */}
                 <section className="py-16">
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl font-bold text-brown-900 mb-12 text-center">Conheça Nossa Equipe</h2>

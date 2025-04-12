@@ -3,32 +3,27 @@ import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 
-// Importando imagens de cafés
 import cafeEspecial from '../../assets/images/products/cafes/cafe-especial.png';
 import cafeComLeite from '../../assets/images/products/cafes/cafe-com-leite-premium.png';
 import cappuccino from '../../assets/images/products/cafes/cappuccino-tradicional.png';
 import mocha from '../../assets/images/products/cafes/mocha.png';
 
-// Importando imagens de doces
 import boloChocolate from '../../assets/images/products/doces/bolo-de-choclate-caseiro.png';
 import cheesecake from '../../assets/images/products/doces/cheesecake-frutas-vermelhas.png';
 import pudim from '../../assets/images/products/doces/pudim-de-leite.png';
 import brownie from '../../assets/images/products/doces/brownie-com-sorvete.png';
 
-// Importando imagens de salgados
 import sanduicheNatural from '../../assets/images/products/salgados/sanduiche-natural.png';
 import quiche from '../../assets/images/products/salgados/quiche-de-queijo.png';
 import paoQueijo from '../../assets/images/products/salgados/pao-de-queijo.png';
 import tortaFrango from '../../assets/images/products/salgados/torta-de-frango.png';
 
-// Importando imagens de bebidas
 import sucoNatural from '../../assets/images/products/bebidas/suco-natural.png';
 import chaGelado from '../../assets/images/products/bebidas/cha-gelado.png';
 import agua from '../../assets/images/products/bebidas/agua-mineral.png';
 import chocolateQuente from '../../assets/images/products/bebidas/chocolate-quente.png';
 
 export default function Cardapio() {
-    // Categorias de produtos
     const categorias = [
         {
             id: 'cafes',
@@ -80,7 +75,6 @@ export default function Cardapio() {
         <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
-                {/* Hero da página */}
                 <div className="bg-brown-800 text-white py-16">
                     <div className="container mx-auto px-6">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">Nosso Cardápio</h1>
@@ -90,7 +84,6 @@ export default function Cardapio() {
                     </div>
                 </div>
 
-                {/* Navegação de categorias */}
                 <div className="bg-white sticky top-16 z-40 shadow-md">
                     <div className="container mx-auto px-6 py-4">
                         <div className="flex space-x-6 overflow-x-auto pb-2 hide-scrollbar">
@@ -107,7 +100,6 @@ export default function Cardapio() {
                     </div>
                 </div>
 
-                {/* Seções de categorias */}
                 {categorias.map((categoria) => (
                     <section key={categoria.id} id={categoria.id} className="py-16 border-b border-gray-100 last:border-0">
                         <div className="container mx-auto px-6">
@@ -132,7 +124,6 @@ export default function Cardapio() {
                     </section>
                 ))}
 
-                {/* Seção de informações adicionais */}
                 <section className="py-16 bg-brown-50">
                     <div className="container mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
