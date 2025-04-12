@@ -1,4 +1,11 @@
 import Link from 'next/link';
+import ProductCard from './ProductCard';
+
+// Importando imagens
+import cafeEspecial from '../../assets/images/products/cafes/cafe-especial.png';
+import boloChocolate from '../../assets/images/products/doces/bolo-de-choclate-caseiro.png';
+import cafeComLeite from '../../assets/images/products/cafes/cafe-com-leite-premium.png';
+import sanduicheNatural from '../../assets/images/products/salgados/sanduiche-natural.png';
 
 export default function FeaturedProducts() {
     const featuredProducts = [
@@ -7,28 +14,28 @@ export default function FeaturedProducts() {
             name: 'Café Especial Tia Rosa',
             description: 'Nosso café especial, torrado artesanalmente com grãos selecionados.',
             price: 'R$ 12,90',
-            imageUrl: '/images/cafe-especial.jpg', // Espaço para imagem
+            imageUrl: cafeEspecial,
         },
         {
             id: 2,
             name: 'Bolo de Chocolate Caseiro',
             description: 'Delicioso bolo de chocolate com cobertura especial e muito amor.',
             price: 'R$ 9,50',
-            imageUrl: '/images/bolo-chocolate.jpg', // Espaço para imagem
+            imageUrl: boloChocolate,
         },
         {
             id: 3,
             name: 'Café com Leite Premium',
             description: 'Café com leite cremoso preparado com nossa mistura especial.',
             price: 'R$ 8,90',
-            imageUrl: '/images/cafe-com-leite.jpg', // Espaço para imagem
+            imageUrl: cafeComLeite,
         },
         {
             id: 4,
             name: 'Sanduíche Natural',
             description: 'Sanduíche com ingredientes frescos e temperos especiais da Tia Rosa.',
             price: 'R$ 14,50',
-            imageUrl: '/images/sanduiche-natural.jpg', // Espaço para imagem
+            imageUrl: sanduicheNatural,
         },
     ];
 
@@ -44,24 +51,14 @@ export default function FeaturedProducts() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {featuredProducts.map((product) => (
-                        <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
-                            <div className="h-48 bg-gray-200 relative">
-                                {/* Placeholder para imagem do produto */}
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                                    <span>Imagem do Produto</span>
-                                </div>
-                            </div>
-                            <div className="p-6">
-                                <h3 className="font-bold text-brown-900 text-lg mb-2">{product.name}</h3>
-                                <p className="text-gray-600 text-sm mb-4">{product.description}</p>
-                                <div className="flex items-center justify-between">
-                                    <span className="font-bold text-xl">{product.price}</span>
-                                    <button className="px-4 py-1 bg-amber-500 text-white rounded-full hover:bg-amber-400 transition-colors">
-                                        Adicionar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <ProductCard
+                            key={product.id}
+                            id={product.id}
+                            name={product.name}
+                            description={product.description}
+                            price={product.price}
+                            imageUrl={product.imageUrl}
+                        />
                     ))}
                 </div>
 
