@@ -99,11 +99,11 @@ export default function Footer({ isMobile }: { isMobile: boolean }) {
                 <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-75">
                     <p>&copy; {currentYear || '2023'} {isMobile ? 'Padaria' : 'Coffee Shops'} Tia Rosa. Todos os direitos reservados.</p>
                     <div className="mt-2">
-                        <Link href="/politica-privacidade" className="hover:text-amber-300 transition-colors">
+                        <Link href={isMobile ? "/celular/politica-privacidade" : "/politica-privacidade"} className="hover:text-amber-300 transition-colors">
                             Política de Privacidade
                         </Link>
                         <span className="mx-2">|</span>
-                        <Link href="/termos" className="hover:text-amber-300 transition-colors">
+                        <Link href={isMobile ? "/celular/termos" : "/termos"} className="hover:text-amber-300 transition-colors">
                             Termos de Uso
                         </Link>
                     </div>
