@@ -27,7 +27,7 @@ export default function AboutUs({ isMobile }: { isMobile: boolean }) {
                         />
                     </div>
 
-                    <div>
+                    <div className={isMobile ? "text-center" : ""}>
                         <h2 className="text-3xl font-bold text-brown-900 mb-6">
                             Nossa História
                         </h2>
@@ -45,7 +45,7 @@ export default function AboutUs({ isMobile }: { isMobile: boolean }) {
                                 "Nosso diferencial está no atendimento personalizado e no ambiente acolhedor, onde cada cliente é tratado como parte da nossa família. Utilizamos ingredientes selecionados e receitas tradicionais que passam de geração em geração."
                             )}
                         </p>
-                        <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div className={`grid grid-cols-2 gap-4 mb-8 ${isMobile ? "justify-center" : ""}`}>
                             {isMobile ? (
                                 <>
                                     <div className="flex items-center">
