@@ -16,7 +16,7 @@ export default function Footer({ isMobile }: { isMobile: boolean }) {
     }, []);
 
     return (
-        <footer className="bg-brown-900 text-white py-10">
+        <footer className={`bg-brown-900 text-white py-10 ${isMobile ? 'pb-24' : ''}`}>
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
