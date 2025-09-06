@@ -11,7 +11,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero isMobile={true} />
         <FeaturedProducts isMobile={true} />
-        <AboutUs />
+        <AboutUs isMobile={true} />
         <Testimonials />
         <ContactCTA />
       </main>
