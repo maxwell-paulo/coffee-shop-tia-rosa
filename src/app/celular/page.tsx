@@ -13,7 +13,7 @@ export default function Home() {
         <FeaturedProducts isMobile={true} />
         <AboutUs isMobile={true} />
         <Testimonials isMobile={true} />
-        <ContactCTA />
+        <ContactCTA isMobile={true} />
       </main>
       <Footer />
     </div>
