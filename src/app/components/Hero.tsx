@@ -2,10 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import heroImage from '../../assets/images/section-hero.png';
+import heroImageMobile from "../../assets/images/celular/mobile-section-hero.png"
 
 import { HiOutlineClock, HiOutlineWifi, HiOutlineFaceSmile } from 'react-icons/hi2';
 
-export default function Hero() {
+export default function Hero({ isMobile }: { isMobile?: boolean }) {
     return (
         <div className="relative bg-brown-800 overflow-hidden">
             <div className="relative h-[500px] flex items-center">
@@ -13,17 +14,25 @@ export default function Hero() {
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div>
+                        <div className={isMobile ? "text-center" : ""}>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                                Café Especial com <span className="text-amber-300">Toque Caseiro</span>
+                                {isMobile ? (
+                                    <>Pão Fresco com <span className="text-amber-300">Sabor Caseiro</span></>
+                                ) : (
+                                    <>Café Especial com <span className="text-amber-300">Toque Caseiro</span></>
+                                )}
                             </h1>
                             <p className="text-lg md:text-xl text-white/80 mb-8">
-                                Venha descobrir o melhor café da região com o aconchego único que só o Coffee Shops Tia Rosa oferece.
+                                {isMobile ? (
+                                    "Venha descobrir os melhores pães da região com o sabor único que só a Padaria Tia Rosa oferece."
+                                ) : (
+                                    "Venha descobrir o melhor café da região com o aconchego único que só o Coffee Shops Tia Rosa oferece."
+                                )}
                             </p>
-                            <div className="flex flex-wrap gap-4">
+                            <div className={`flex gap-4 ${isMobile ? "justify-center flex-wrap" : "flex-wrap"}`}>
                                 <Link href="/cardapio"
                                     className="px-6 py-3 rounded-full bg-amber-500 text-white font-medium hover:bg-amber-400 transition-colors">
-                                    Ver Nosso Cardápio
+                                    {isMobile ? "Comprar Online" : "Ver Nosso Cardápio"}
                                 </Link>
                                 <Link href="/contato"
                                     className="px-6 py-3 rounded-full bg-transparent border-2 border-white text-white font-medium hover:bg-white/10 transition-colors">
@@ -34,7 +43,7 @@ export default function Hero() {
 
                         <div className="hidden md:block relative h-[400px]">
                             <Image
-                                src={heroImage}
+                                src={isMobile ? heroImageMobile : heroImage}
                                 alt="Coffee Shop Tia Rosa"
                                 fill
                                 className="object-contain"
