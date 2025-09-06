@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 import { getCoffeeShopFeaturedProducts } from '../../data/coffeeShopCategories';
 import { getPadariaFeaturedProducts } from '../../data/padariaCategories';
 
-export default function FeaturedProducts({ isMobile }: { isMobile?: boolean }) {
+export default function FeaturedProducts({ isMobile = false }: { isMobile?: boolean }) {
     const featuredProducts = getCoffeeShopFeaturedProducts();
     const padariaFeaturedProducts = getPadariaFeaturedProducts();
 
@@ -32,6 +32,7 @@ export default function FeaturedProducts({ isMobile }: { isMobile?: boolean }) {
                             description={product.description}
                             price={product.price}
                             imageUrl={product.imageUrl}
+                            isMobile={isMobile}
                         />
                     )) : featuredProducts.map((product) => (
                         <ProductCard
@@ -41,6 +42,7 @@ export default function FeaturedProducts({ isMobile }: { isMobile?: boolean }) {
                             description={product.description}
                             price={product.price}
                             imageUrl={product.imageUrl}
+                            isMobile={isMobile}
                         />
                     ))}
                 </div>

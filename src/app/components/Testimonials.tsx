@@ -6,7 +6,7 @@ import avatar1 from '../../assets/images/testimonials/avatar-1.png';
 import avatar2 from '../../assets/images/testimonials/avatar-2.png';
 import avatar3 from '../../assets/images/testimonials/avatar-3.png';
 
-export default function Testimonials({ isMobile }: { isMobile?: boolean }) {
+export default function Testimonials({ isMobile = false }: { isMobile?: boolean }) {
     const testimonials = isMobile ? [
         {
             id: 1,

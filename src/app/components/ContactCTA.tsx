@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import logo from '../../assets/images/logos/logo.png';
 
-export default function ContactCTA({ isMobile }: { isMobile: boolean }) {
+export default function ContactCTA({ isMobile = false }: { isMobile?: boolean }) {
 
     return (
         <section className="py-20 bg-amber-500 relative">

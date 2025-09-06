@@ -6,7 +6,7 @@ import heroImageMobile from "../../assets/images/celular/mobile-section-hero.png
 
 import { HiOutlineClock, HiOutlineWifi, HiOutlineFaceSmile } from 'react-icons/hi2';
 
-export default function Hero({ isMobile }: { isMobile?: boolean }) {
+export default function Hero({ isMobile = false }: { isMobile?: boolean }) {
     return (
         <div className="relative bg-brown-800 overflow-hidden">
             <div className="relative h-[500px] flex items-center">

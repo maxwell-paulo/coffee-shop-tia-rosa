@@ -8,7 +8,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import logoImage from '../../assets/images/logos/logo.png';
 import logoText from '../../assets/images/logos/texto.png';
 
-export default function Footer({ isMobile }: { isMobile: boolean }) {
+export default function Footer({ isMobile = false }: { isMobile?: boolean }) {
     const [currentYear, setCurrentYear] = useState('');
 
     useEffect(() => {

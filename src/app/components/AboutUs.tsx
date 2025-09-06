@@ -13,7 +13,7 @@ import { TbWheat } from "react-icons/tb";
 import { HiOutlineClock } from "react-icons/hi2";
 
 
-export default function AboutUs({ isMobile }: { isMobile: boolean }) {
+export default function AboutUs({ isMobile = false }: { isMobile?: boolean }) {
     return (
         <section className="py-16 bg-white">
             <div className="container mx-auto px-6">
