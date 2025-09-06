@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         <Hero isMobile={true} />
-        <FeaturedProducts />
+        <FeaturedProducts isMobile={true} />
         <AboutUs />
         <Testimonials />
         <ContactCTA />
