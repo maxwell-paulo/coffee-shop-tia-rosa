@@ -6,8 +6,30 @@ import avatar1 from '../../assets/images/testimonials/avatar-1.png';
 import avatar2 from '../../assets/images/testimonials/avatar-2.png';
 import avatar3 from '../../assets/images/testimonials/avatar-3.png';
 
-export default function Testimonials() {
-    const testimonials = [
+export default function Testimonials({ isMobile }: { isMobile?: boolean }) {
+    const testimonials = isMobile ? [
+        {
+            id: 1,
+            name: 'Ana Paula',
+            role: 'Cliente Frequente',
+            content: 'Os pães da Padaria Tia Rosa são simplesmente os melhores da cidade! Sempre fresquinhos e com aquele sabor caseiro que só ela sabe fazer. Minha família adora!',
+            avatar: avatar1,
+        },
+        {
+            id: 2,
+            name: 'Ricardo Oliveira',
+            role: 'Empresário Local',
+            content: 'Sempre compro os pães da Tia Rosa para o café da manhã da empresa. A qualidade é excepcional e os funcionários adoram. Um verdadeiro tesouro em nossa cidade!',
+            avatar: avatar2,
+        },
+        {
+            id: 3,
+            name: 'Mariana Silva',
+            role: 'Estudante',
+            content: 'Descobri a Padaria Tia Rosa durante a faculdade e virou minha parada obrigatória. Pães frescos, preços justos e aquele cheirinho de padaria que me lembra da casa da vovó!',
+            avatar: avatar3,
+        },
+    ] : [
         {
             id: 1,
             name: 'Ana Paula',
@@ -39,7 +61,7 @@ export default function Testimonials() {
                         <div className="relative w-12 h-12 bg-amber-100 rounded-full p-2">
                             <Image
                                 src={logo}
-                                alt="Coffee Shops Tia Rosa"
+                                alt={isMobile ? "Padaria Tia Rosa" : "Coffee Shops Tia Rosa"}
                                 fill
                                 className="object-contain p-1"
                             />
@@ -47,7 +69,11 @@ export default function Testimonials() {
                     </div>
                     <h2 className="text-3xl font-bold text-brown-900 mb-4">O Que Nossos Clientes Dizem</h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        A opinião de quem já experimentou nossa experiência é o que nos motiva a melhorar cada dia mais.
+                        {isMobile ? (
+                            "A opinião de quem já experimentou nossos pães frescos é o que nos motiva a melhorar cada dia mais."
+                        ) : (
+                            "A opinião de quem já experimentou nossa experiência é o que nos motiva a melhorar cada dia mais."
+                        )}
                     </p>
                 </div>
 

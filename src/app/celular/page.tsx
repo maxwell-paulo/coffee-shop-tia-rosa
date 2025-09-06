@@ -12,7 +12,7 @@ export default function Home() {
         <Hero isMobile={true} />
         <FeaturedProducts isMobile={true} />
         <AboutUs isMobile={true} />
-        <Testimonials />
+        <Testimonials isMobile={true} />
         <ContactCTA />
       </main>
       <Footer />
