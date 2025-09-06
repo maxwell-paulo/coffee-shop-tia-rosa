@@ -4,6 +4,7 @@ import Image from 'next/image';
 import logo from '../../assets/images/logos/logo.png';
 
 export default function ContactCTA({ isMobile }: { isMobile: boolean }) {
+
     return (
         <section className="py-20 bg-amber-500 relative">
             <div className="container mx-auto px-6 relative z-10">
@@ -29,7 +30,7 @@ export default function ContactCTA({ isMobile }: { isMobile: boolean }) {
                         )}
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center">
-                        <Link href="/contato"
+                        <Link href={isMobile ? "/celular/cardapio" : "/contato"}
                             className="px-8 py-3 rounded-full bg-brown-900 text-white font-medium hover:bg-brown-800 transition-colors">
                             {isMobile ? "Comprar Online" : "Entre em Contato"}
                         </Link>
