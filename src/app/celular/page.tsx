@@ -15,7 +15,7 @@ export default function Home() {
         <Testimonials isMobile={true} />
         <ContactCTA isMobile={true} />
       </main>
-      <Footer />
+      <Footer isMobile={true} />
     </div>
   );
 }
