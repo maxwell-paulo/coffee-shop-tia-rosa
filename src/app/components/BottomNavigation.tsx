@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useCartStore } from '../../store/useCartStore';
 import {
     HiHome,
     HiInformationCircle,
@@ -12,6 +13,7 @@ import {
 
 export default function BottomNavigation() {
     const pathname = usePathname();
+    const itemsCount = useCartStore((state) => state.items.reduce((acc, i) => acc + i.quantity, 0));
 
     const navItems = [
         {
@@ -60,7 +62,14 @@ export default function BottomNavigation() {
                                 : 'text-gray-600 hover:text-amber-600'
                                 }`}
                         >
-                            <Icon className={`w-6 h-6 mb-1 ${item.isActive ? 'text-amber-600' : 'text-gray-500'}`} />
+                            <div className="relative">
+                                <Icon className={`w-6 h-6 mb-1 ${item.isActive ? 'text-amber-600' : 'text-gray-500'}`} />
+                                {item.href === '/celular/carrinho' && itemsCount > 0 && (
+                                    <span className="absolute -top-2 -right-2 inline-flex items-center justify-center text-[10px] leading-none font-bold px-1.5 py-0.5 rounded-full bg-amber-500 text-white min-w-[18px]">
+                                        {itemsCount}
+                                    </span>
+                                )}
+                            </div>
                             <span className="text-xs font-medium">{item.label}</span>
                         </Link>
                     );

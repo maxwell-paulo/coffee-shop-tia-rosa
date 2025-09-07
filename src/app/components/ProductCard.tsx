@@ -1,6 +1,8 @@
+"use client";
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { HiShoppingCart } from 'react-icons/hi2';
+import { useCartStore } from '../../store/useCartStore';
 
 export interface ProductCardProps {
     id: number;
@@ -12,12 +14,16 @@ export interface ProductCardProps {
 }
 
 export default function ProductCard({
+    id,
     name,
     description,
     price,
     imageUrl,
     isMobile = false,
 }: ProductCardProps) {
+    const { addItem, increase, decrease, removeItem, items } = useCartStore();
+    const currentQuantity = items.find((i) => i.id === id)?.quantity ?? 0;
+    const resolvedImageUrl = typeof imageUrl === 'string' ? imageUrl : imageUrl.src;
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
             <div className={`bg-gray-200 relative ${isMobile ? 'h-48' : 'h-64'}`}>
@@ -40,10 +46,40 @@ export default function ProductCard({
                 <div className="flex items-center justify-between">
                     <span className={`font-bold text-brown-800 ${isMobile ? 'text-sm' : 'text-base'}`}>{price}</span>
                     {isMobile && (
-                        <button className="bg-amber-500 text-white px-3 py-2 rounded-lg hover:bg-amber-600 transition-colors flex items-center gap-2">
-                            <HiShoppingCart className="w-4 h-4" />
-                            <span className="text-sm font-medium">Adicionar</span>
-                        </button>
+                        currentQuantity > 0 ? (
+                            <div className="flex items-center gap-2">
+                                <button
+                                    onClick={() => decrease(id)}
+                                    aria-label="Diminuir"
+                                    className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
+                                >
+                                    −
+                                </button>
+                                <span className="w-6 text-center text-sm font-medium">{currentQuantity}</span>
+                                <button
+                                    onClick={() => increase(id)}
+                                    aria-label="Aumentar"
+                                    className="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center hover:bg-amber-600 transition-colors"
+                                >
+                                    +
+                                </button>
+                                <button
+                                    onClick={() => removeItem(id)}
+                                    aria-label="Remover"
+                                    className="ml-1 p-2 text-red-500 hover:text-red-700"
+                                >
+                                    ×
+                                </button>
+                            </div>
+                        ) : (
+                            <button
+                                onClick={() => addItem({ id, name, price, imageUrl: resolvedImageUrl })}
+                                className="bg-amber-500 text-white px-3 py-2 rounded-lg hover:bg-amber-600 transition-colors flex items-center gap-2"
+                            >
+                                <HiShoppingCart className="w-4 h-4" />
+                                <span className="text-sm font-medium">Adicionar</span>
+                            </button>
+                        )
                     )}
                 </div>
             </div>
